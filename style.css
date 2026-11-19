@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--orange:#f6a800;--orange-dark:#dc9300;--ink:#202124;--muted:#777b80;--line:#e9e7e2;--paper:#fbfaf7;--white:#fff}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:"DM Sans",Arial,sans-serif;color:var(--ink);background:var(--paper)}
+body{min-height:100svh;display:flex;justify-content:center;align-items:center;padding:18px}
+.app-shell{width:min(100%,900px);min-height:min(760px,calc(100svh - 36px));background:var(--white);border:1px solid #efeee9;border-radius:22px;box-shadow:0 16px 55px rgba(37,32,20,.06);padding:22px 42px 15px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.topbar{height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);flex-shrink:0}
+.chapter-logo{display:block;width:230px;max-height:56px;object-fit:contain;object-position:left center}
+.event-label,.eyebrow,.stat-label,.welcome-foot,.small-note{font-size:10px;letter-spacing:1.35px;font-weight:800;color:#858585}
+.event-label{background:#fff8e9;color:#a76f00;padding:9px 12px;border-radius:30px}
+.screen{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+.welcome-screen{align-items:center;text-align:center;padding:20px 0 14px}
+.welcome-copy{max-width:590px}
+.eyebrow{color:var(--orange-dark);margin:0 0 12px}
+h1,h2,h3,p{margin-top:0}
+h1{font-family:Manrope,sans-serif;font-size:clamp(38px,6vw,58px);line-height:1.06;letter-spacing:-2.7px;margin:0 0 14px;font-weight:800}
+h1 span{color:var(--orange)}
+.intro{color:#74777b;font-size:15px;line-height:1.65;max-width:500px;margin:0 auto}
+.start-card{width:min(100%,410px);margin:26px auto 0;text-align:left;padding:22px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 26px rgba(30,25,15,.045)}
+.start-card label{display:block;font-size:12px;font-weight:700;margin:0 0 9px}
+.start-card input{width:100%;height:48px;border:1px solid #dedbd4;border-radius:9px;padding:0 14px;font:inherit;font-size:14px;outline:none;transition:border .2s,box-shadow .2s}
+.start-card input:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(246,168,0,.13)}
+.primary-btn,.secondary-btn{border:0;border-radius:9px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:transform .15s,background .15s}
+.primary-btn{width:100%;min-height:47px;margin-top:12px;padding:0 17px;background:var(--orange);color:#211a0d;display:flex;align-items:center;justify-content:center;gap:12px}
+.primary-btn:hover{background:#ffb91f;transform:translateY(-1px)}
+.primary-btn span{font-size:19px;line-height:0}
+.small-note{text-align:center;letter-spacing:.2px;font-size:10px;font-weight:500;margin:14px 0 0;color:#9a9a9a}
+.welcome-foot{margin-top:25px;font-size:9px;letter-spacing:1.4px;color:#a0a0a0}
+.status-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#66ad79;margin-right:7px;vertical-align:1px}
+footer{border-top:1px solid var(--line);padding-top:13px;text-align:center;font-size:9px;letter-spacing:1.35px;color:#a2a2a2;flex-shrink:0}
+.hidden{display:none!important}
+.game-screen,.result-screen{padding:25px 0}
+.game-heading{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.game-heading h2,.result-screen h2{font:800 28px Manrope,sans-serif;letter-spacing:-.8px;margin:0}
+.stats{display:flex;gap:22px;text-align:right}
+.stats div{display:flex;flex-direction:column;gap:4px}
+.stat-label{font-size:9px}
+.stats strong{font-size:19px;font-weight:800}
+.case-intro{font-size:14px;color:#777;line-height:1.55;margin:15px 0}
+.progress-track{height:5px;background:#f0eee9;border-radius:8px;overflow:hidden;margin-bottom:17px}
+.progress-fill{height:100%;width:0;background:var(--orange);transition:width .25s}
+.clue-panel,.question-panel{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff}
+.panel-heading{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:1.1px;font-weight:800;color:#777}
+.mini-icon{font-size:19px;color:var(--orange)}
+.clue-count{margin-left:auto;color:#aaa;font-size:9px}
+.clue-content{min-height:80px;padding:18px 0 12px;font-size:15px;line-height:1.65}
+.secondary-btn{background:#f6f4ef;color:#5c5a55;padding:11px 15px}
+.secondary-btn:hover{background:#eeeae1}
+.question-panel{margin-top:14px}
+.question-panel h3{font:700 17px Manrope,sans-serif;margin:0 0 14px}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.choice{border:1px solid var(--line);background:#fff;text-align:left;padding:12px;border-radius:9px;font:600 12px "DM Sans",sans-serif;cursor:pointer}
+.choice:hover{border-color:var(--orange)}
+.choice.selected{border-color:var(--orange);background:#fff8e8}
+.choice:disabled{cursor:default}
+.feedback{margin-top:12px;padding:12px 14px;background:#f7f6f2;border-radius:9px;font-size:12px;line-height:1.5;color:#555}
+.result-screen{align-items:center;text-align:center}
+.result-mark{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#fff5dd;color:#b47b00;font-size:27px;margin-bottom:18px}
+.result-screen h2{font-size:34px;margin-bottom:10px}
+#resultMessage{color:#777;line-height:1.6;font-size:14px;max-width:470px}
+.final-score{margin:17px 0 14px;padding:15px 40px;border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;gap:5px}
+.final-score span{font-size:9px;letter-spacing:1.3px;color:#999;font-weight:800}
+.final-score strong{font:800 32px Manrope,sans-serif}
+.leaderboard{font-size:11px;color:#777;margin:0 0 8px}
+.result-screen .primary-btn{max-width:260px}
+@media(max-width:600px){
+ body{padding:0;background:#fff}
+ .app-shell{min-height:100svh;border:0;border-radius:0;box-shadow:none;padding:15px 19px 12px}
+ .topbar{height:61px}.chapter-logo{width:185px;max-height:45px}.event-label{font-size:8px;padding:7px 8px;letter-spacing:.7px}
+ .welcome-screen{padding:22px 0 12px}.intro{font-size:13px;max-width:360px}
+ .start-card{margin-top:23px;padding:18px}
+ .welcome-foot{margin-top:20px}
+ .game-screen,.result-screen{padding:20px 0}
+ .game-heading h2{font-size:23px}.stats{gap:13px}.stats strong{font-size:16px}
+ .clue-panel,.question-panel{padding:15px}.choices{grid-template-columns:1fr}
+ footer{font-size:8px}
+}
+@media(max-height:650px) and (min-width:601px){
+ body{padding:8px}.app-shell{min-height:calc(100svh - 16px);padding-top:12px;padding-bottom:10px}
+ .topbar{height:55px}.chapter-logo{max-height:44px}.welcome-screen{padding:9px 0}
+ h1{font-size:43px;margin-bottom:8px}.intro{font-size:13px}.start-card{margin-top:14px;padding:16px}
+ .welcome-foot{margin-top:12px}footer{padding-top:8px}
+}

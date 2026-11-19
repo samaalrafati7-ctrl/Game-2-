@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6a800">
+  <title>Cyber Detective | IEEE CS JUST</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <img class="chapter-logo" src="ieee-cs-just-logo.png" alt="IEEE Computer Society JUST Student Chapter">
+      <span class="event-label">INTERACTIVE BOOTH GAME</span>
+    </header>
+
+    <section class="screen welcome-screen" id="welcomeScreen">
+      <div class="welcome-copy">
+        <p class="eyebrow">A CYBERSECURITY MYSTERY</p>
+        <h1>Cyber <span>Detective</span></h1>
+        <p class="intro">Something suspicious is happening. Follow the clues, connect the evidence, and find out who's behind it.</p>
+      </div>
+
+      <form class="start-card" id="startForm">
+        <label for="nickname">Your detective name</label>
+        <input id="nickname" name="nickname" type="text" maxlength="18" placeholder="Enter a nickname" autocomplete="off" required>
+        <button class="primary-btn" type="submit">Start investigating <span aria-hidden="true">→</span></button>
+        <p class="small-note">3 cases · 2:30 minutes · Can you solve them all?</p>
+      </form>
+      <div class="welcome-foot"><span class="status-dot"></span> READY WHEN YOU ARE</div>
+    </section>
+
+    <section class="screen game-screen hidden" id="gameScreen">
+      <div class="game-heading">
+        <div><p class="eyebrow">CASE FILE <span id="caseNumber">01</span> / 03</p><h2 id="caseTitle">Midnight Login</h2></div>
+        <div class="stats"><div><span class="stat-label">TIME</span><strong id="timer">2:30</strong></div><div><span class="stat-label">SCORE</span><strong id="score">0</strong></div></div>
+      </div>
+      <p class="case-intro" id="caseIntro"></p>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="clue-panel">
+        <div class="panel-heading"><span class="mini-icon">⌕</span><span> EVIDENCE</span><span class="clue-count" id="clueCount">CLUE 1 OF 3</span></div>
+        <div class="clue-content" id="clueContent"></div>
+        <button class="secondary-btn" id="nextClueBtn">Reveal next clue</button>
+      </div>
+      <div class="question-panel hidden" id="questionPanel">
+        <p class="eyebrow">YOUR FINDING</p>
+        <h3 id="questionText"></h3>
+        <div class="choices" id="choices"></div>
+        <button class="primary-btn hidden" id="continueBtn">Continue <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="feedback hidden" id="feedback" role="status"></div>
+    </section>
+
+    <section class="screen result-screen hidden" id="resultScreen">
+      <div class="result-mark">✓</div>
+      <p class="eyebrow">INVESTIGATION COMPLETE</p>
+      <h2 id="resultTitle">Case closed.</h2>
+      <p id="resultMessage"></p>
+      <div class="final-score"><span>YOUR SCORE</span><strong id="finalScore">0</strong></div>
+      <div class="leaderboard" id="leaderboard"></div>
+      <button class="primary-btn" id="playAgainBtn">Play again <span aria-hidden="true">↻</span></button>
+    </section>
+    <footer>IEEE COMPUTER SOCIETY · JUST STUDENT CHAPTER</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
